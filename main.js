@@ -251,7 +251,6 @@ rightArrow.onclick = () => {
 // End Standard Slider Function:
 
 // Start Most Popular Section
-
 let allMostPopularTabs = document.querySelectorAll(
   ".cont-box-select .select-part .select-element"
 );
@@ -260,7 +259,6 @@ let mostPopularContent = document.querySelectorAll(
   ".container-of-all-tabs .card-selector"
 );
 let arrayMostPopularContent = Array.from(mostPopularContent);
-console.log(arrayMostPopularContent);
 
 arrayMostPopularTabs.forEach((tab) => {
   tab.addEventListener("click", (e) => {
@@ -269,16 +267,12 @@ arrayMostPopularTabs.forEach((tab) => {
     });
     e.currentTarget.classList.add("active");
 
-    //==================================
     arrayMostPopularContent.forEach((content) => {
       content.style.display = "none";
     });
 
-    // console.log(document.querySelector(e.currentTarget.dataset.content));
-
     document.querySelector(e.currentTarget.dataset.content).style.display =
       "block";
-    //==================================
   });
 });
 
@@ -313,5 +307,32 @@ seeMoreLessFunction(idMoreSectors, idSectors);
 // Function for Location
 seeMoreLessFunction(idMoreLocations, idLocations);
 
-// See Less Sectors
 // End Most Popular Section
+
+// Start Featured Businesses
+let allFeaturedBusinessesTabs = document.querySelectorAll(
+  ".box-select-featured-businesses .select-el"
+);
+let arrayFeatBusinessTabs = Array.from(allFeaturedBusinessesTabs);
+let fBContent = document.querySelectorAll(
+  ".featured-businesses-of-all-tabs .same-class"
+);
+let arrayFBContent = Array.from(fBContent);
+
+arrayFeatBusinessTabs.forEach((tab) => {
+  tab.addEventListener("click", (e) => {
+    arrayFeatBusinessTabs.forEach((element) => {
+      element.classList.remove("active");
+    });
+    e.currentTarget.classList.add("active");
+
+    arrayFBContent.forEach((content) => {
+      content.style.display = "none";
+    });
+
+    document.querySelector(
+      e.currentTarget.dataset.featuredcontent
+    ).style.display = "block";
+  });
+});
+// End Featured Businesses

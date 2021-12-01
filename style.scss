@@ -10,6 +10,7 @@ $mainOrangeColor: #ff9c00;
 $secondOrangeColor: #f19809ef;
 $borderColorOrange: #dd8a05;
 $maingreenColor: #3a9650;
+$secondGreenColor: #d7eadc;
 $mainGreyColor: #d7d8d8;
 $mainNavyColor: #263238;
 $iconGreyColor: #bcbebf;
@@ -78,7 +79,7 @@ a {
 }
 .our-paraghraph {
   line-height: 1.8;
-  font-size: calc(0.9rem + 0.3vw);
+  font-size: calc(0.8rem + 0.3vw);
 }
 .text-center {
   text-align: center;
@@ -649,14 +650,8 @@ a {
           display: block;
           width: 100%;
           height: 85px;
-          // @media (min-width: 375px) and (max-width: 575.98px) {
-          //   width: 91.5vw;
-          // }
-          // @media (max-width: 374.98px) {
-          //   width: 87.5vw;
-          // }
           @media (max-width: 767.98px) {
-            width: calc(100vw - 47px);
+            width: calc(100vw - 30px);
           }
         }
       }
@@ -738,7 +733,6 @@ a {
           .main-card {
             position: relative;
             border-radius: 10px;
-            // background-color: red;
             overflow: hidden;
             .link-main-card {
               display: block;
@@ -787,6 +781,48 @@ a {
           }
           .frd-box {
             min-height: 500px;
+          }
+        }
+      }
+      .btn-view-all {
+        position: relative;
+        text-align: center;
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+        a {
+          display: block;
+          width: 100px;
+          border-radius: 24px;
+          padding: 10px 20px;
+          font-size: 1rem;
+          outline: none;
+          border: none;
+          color: $whiteColor;
+          background-color: $mainOrangeColor;
+          transition: all 0.3s ease;
+          &:hover {
+            background-color: $borderColorOrange;
+          }
+          &:before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 0%;
+            width: 50%;
+            height: 1px;
+            z-index: -1;
+            background-color: $inputColor;
+          }
+          &:after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            right: 0%;
+            width: 50%;
+            height: 1px;
+            z-index: -1;
+            background-color: $inputColor;
           }
         }
       }
@@ -912,3 +948,267 @@ a {
   }
 }
 // End Most Popular Section
+
+// Start Featured Businesses
+.featured-businesses-section {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  h2 {
+    color: $secondBlueColor;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  .box-select-featured-businesses {
+    border-bottom: 1px solid $inputColor;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    .select-part-element {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .select-el {
+        margin-right: 10px;
+        margin-left: 10px;
+        text-align: center;
+        font-size: 1rem;
+        color: $mainNavyColor;
+        padding: 10px 15px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        &:hover {
+          color: $mainBlueColor;
+        }
+        border-bottom: 4px solid transparent;
+        @media (max-width: 767.98px) {
+          // width: 80px;
+        }
+      }
+      .select-el.active {
+        border-bottom: 4px solid $mainBlueColor;
+        color: $mainBlueColor;
+      }
+    }
+  }
+  .featured-businesses-of-all-tabs {
+    .content-business {
+      .container-cards-business {
+        display: flex;
+        .main-card:not(:last-of-type) {
+          margin-right: 30px;
+          @media (max-width: 767.98px) {
+            margin-right: 0px;
+          }
+        }
+        .main-card {
+          flex-basis: calc((100% / 3) - 30px);
+          @media (max-width: 767.98px) {
+            flex-basis: 100%;
+          }
+          .row-img {
+            min-height: 350px;
+            background-size: cover;
+            background-repeat: no-repeat;
+            border-radius: 10px;
+            position: relative;
+            .price {
+              background-color: $whiteColor;
+              color: $secondBlueColor;
+              padding: 5px 20px;
+              border-radius: 24px;
+              text-align: center;
+              position: absolute;
+              bottom: 10px;
+              right: 10px;
+            }
+          }
+          .row-date {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            @media (min-width: 768px) and (max-width: 991.98px) {
+              flex-direction: column-reverse;
+            }
+            .info {
+              text-transform: uppercase;
+              text-align: center;
+              color: $maingreenColor;
+              background-color: $secondGreenColor;
+              border-radius: 24px;
+              padding: 8px 20px;
+              @media (min-width: 768px) and (max-width: 991.98px) {
+                display: block;
+                width: 100%;
+              }
+            }
+            .cont-date {
+              display: flex;
+              @media (min-width: 768px) and (max-width: 991.98px) {
+                width: 100%;
+                justify-content: center;
+                margin-bottom: 10px;
+              }
+              .img-icon {
+                width: 20px;
+                margin-right: 10px;
+              }
+              time {
+                color: $secondBlueColor;
+              }
+            }
+          }
+          h3 {
+            font-size: calc(1rem + 0.4vw);
+            font-weight: 400;
+            text-align: justify;
+            line-height: 1.6;
+          }
+          p {
+            margin-top: 20px;
+            text-align: justify;
+          }
+          .info-location {
+            margin-top: 20px;
+            margin-bottom: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            @media (min-width: 768px) and (max-width: 991.98px) {
+              flex-direction: column;
+              align-items: start;
+            }
+            .location {
+              display: flex;
+              @media (min-width: 768px) and (max-width: 991.98px) {
+                margin-bottom: 10px;
+              }
+              img {
+                width: 20px;
+                margin-right: 10px;
+              }
+              span {
+                color: $secondBlueColor;
+                font-size: 0.9rem;
+                line-height: 1.2;
+                letter-spacing: -0.5px;
+                @media (min-width: 768px) and (max-width: 991.98px) {
+                  font-size: 0.75rem;
+                }
+              }
+            }
+            .views {
+              display: flex;
+              img {
+                width: 20px;
+                margin-right: 10px;
+              }
+              span {
+                color: $secondBlueColor;
+                font-size: 0.9rem;
+                @media (min-width: 768px) and (max-width: 991.98px) {
+                  font-size: 0.75rem;
+                }
+              }
+            }
+          }
+          .btn-view-details {
+            width: 150px;
+            @media (max-width: 991.98px) {
+              width: 100%;
+            }
+            a {
+              display: block;
+              border-radius: 24px;
+              text-align: center;
+              padding: 10px 20px;
+              font-size: 1rem;
+              outline: none;
+              border: none;
+              color: $whiteColor;
+              background-color: $mainOrangeColor;
+              transition: all 0.3s ease;
+              &:hover {
+                background-color: $borderColorOrange;
+              }
+            }
+          }
+        }
+      }
+    }
+    .content-franchise {
+      display: none;
+      min-height: 300px;
+      background-color: yellow;
+    }
+  }
+}
+// End Featured Businesses
+
+// Start Under Section
+.under-section {
+  h3,
+  h2 {
+    color: $secondBlueColor;
+    text-align: center;
+  }
+  h3 {
+    margin-bottom: 20px;
+  }
+  h2 {
+    margin-bottom: 40px;
+  }
+  .cont-slider-under-section {
+    .card-main-under {
+    }
+  }
+}
+// End Under Section
+
+// Start Sale Marketplace Blue
+.sale-marketplace-section-blue {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  position: relative;
+  background-image: url("images/bg-marketplace.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  .overlay {
+    background-color: $mainBlueColor;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+  }
+  h3,
+  h2 {
+    color: $whiteColor;
+    text-align: center;
+  }
+  h3 {
+    margin-bottom: 20px;
+  }
+  h2 {
+    margin-bottom: 40px;
+  }
+}
+// End Sale Marketplace Blue
+
+// Start Sale Marketplace White
+.sale-marketplace-section-white {
+  h3,
+  h2 {
+    color: $secondBlueColor;
+    text-align: center;
+  }
+  h3 {
+    margin-bottom: 20px;
+  }
+  h2 {
+    margin-bottom: 40px;
+  }
+}
+// End Sale Marketplace White
